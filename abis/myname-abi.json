@@ -1,0 +1,910 @@
+{
+  "encoding": "1",
+  "types": [
+    {
+      "typeId": 0,
+      "type": "()",
+      "components": [],
+      "typeParameters": null
+    },
+    {
+      "typeId": 1,
+      "type": "b256",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 2,
+      "type": "enum AssetError",
+      "components": [
+        {
+          "name": "InsufficientPayment",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "IncorrectAssetSent",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 3,
+      "type": "enum AuthorizationError",
+      "components": [
+        {
+          "name": "SenderNotOwner",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "NameAlreadySolved",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "NameExpired",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 4,
+      "type": "enum Identity",
+      "components": [
+        {
+          "name": "Address",
+          "type": 11,
+          "typeArguments": null
+        },
+        {
+          "name": "ContractId",
+          "type": 14,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 5,
+      "type": "enum MarketError",
+      "components": [
+        {
+          "name": "NameNotlisted",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 6,
+      "type": "enum Option",
+      "components": [
+        {
+          "name": "None",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "Some",
+          "type": 8,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": [
+        8
+      ]
+    },
+    {
+      "typeId": 7,
+      "type": "enum RegistrationValidityError",
+      "components": [
+        {
+          "name": "NameNotRegistered",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "NameNotExpired",
+          "type": 0,
+          "typeArguments": null
+        },
+        {
+          "name": "NameTooShort",
+          "type": 0,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 8,
+      "type": "generic T",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 9,
+      "type": "raw untyped ptr",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 10,
+      "type": "str",
+      "components": null,
+      "typeParameters": null
+    },
+    {
+      "typeId": 11,
+      "type": "struct Address",
+      "components": [
+        {
+          "name": "bits",
+          "type": 1,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 12,
+      "type": "struct BuyEvent",
+      "components": [
+        {
+          "name": "time",
+          "type": 25,
+          "typeArguments": null
+        },
+        {
+          "name": "price",
+          "type": 25,
+          "typeArguments": null
+        },
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "buyer",
+          "type": 4,
+          "typeArguments": null
+        },
+        {
+          "name": "seller",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 13,
+      "type": "struct Bytes",
+      "components": [
+        {
+          "name": "buf",
+          "type": 21,
+          "typeArguments": null
+        },
+        {
+          "name": "len",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 14,
+      "type": "struct ContractId",
+      "components": [
+        {
+          "name": "bits",
+          "type": 1,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 15,
+      "type": "struct DelistEvent",
+      "components": [
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "identity",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 16,
+      "type": "struct ListEvent",
+      "components": [
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "owner",
+          "type": 4,
+          "typeArguments": null
+        },
+        {
+          "name": "price",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 17,
+      "type": "struct Market",
+      "components": [
+        {
+          "name": "owner",
+          "type": 4,
+          "typeArguments": null
+        },
+        {
+          "name": "price",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 18,
+      "type": "struct NameExtendEvent",
+      "components": [
+        {
+          "name": "addtime",
+          "type": 25,
+          "typeArguments": null
+        },
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "identity",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 19,
+      "type": "struct NameRegisteredEvent",
+      "components": [
+        {
+          "name": "starttime",
+          "type": 25,
+          "typeArguments": null
+        },
+        {
+          "name": "expiry",
+          "type": 25,
+          "typeArguments": null
+        },
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "identity",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 20,
+      "type": "struct NameTransferEvent",
+      "components": [
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "from",
+          "type": 4,
+          "typeArguments": null
+        },
+        {
+          "name": "to",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 21,
+      "type": "struct RawBytes",
+      "components": [
+        {
+          "name": "ptr",
+          "type": 9,
+          "typeArguments": null
+        },
+        {
+          "name": "cap",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 22,
+      "type": "struct Record",
+      "components": [
+        {
+          "name": "expiry",
+          "type": 25,
+          "typeArguments": null
+        },
+        {
+          "name": "identity",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 23,
+      "type": "struct ResolvingEvent",
+      "components": [
+        {
+          "name": "name",
+          "type": 24,
+          "typeArguments": null
+        },
+        {
+          "name": "identity",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 24,
+      "type": "struct String",
+      "components": [
+        {
+          "name": "bytes",
+          "type": 13,
+          "typeArguments": null
+        }
+      ],
+      "typeParameters": null
+    },
+    {
+      "typeId": 25,
+      "type": "u64",
+      "components": null,
+      "typeParameters": null
+    }
+  ],
+  "functions": [
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        }
+      ],
+      "name": "buy",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "payable",
+          "arguments": []
+        },
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "_amount",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "name": "claim",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        }
+      ],
+      "name": "delist",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        },
+        {
+          "name": "_year",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "name": "extend",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "payable",
+          "arguments": []
+        },
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [],
+      "name": "get_basepercent",
+      "output": {
+        "name": "",
+        "type": 25,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [],
+      "name": "get_baseprice",
+      "output": {
+        "name": "",
+        "type": 25,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        }
+      ],
+      "name": "get_market",
+      "output": {
+        "name": "",
+        "type": 6,
+        "typeArguments": [
+          {
+            "name": "",
+            "type": 17,
+            "typeArguments": null
+          }
+        ]
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "identity",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "name": "get_name",
+      "output": {
+        "name": "",
+        "type": 6,
+        "typeArguments": [
+          {
+            "name": "",
+            "type": 24,
+            "typeArguments": null
+          }
+        ]
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        }
+      ],
+      "name": "get_record",
+      "output": {
+        "name": "",
+        "type": 6,
+        "typeArguments": [
+          {
+            "name": "",
+            "type": 22,
+            "typeArguments": null
+          }
+        ]
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        },
+        {
+          "name": "_price",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "name": "list",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        },
+        {
+          "name": "_year",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "name": "register",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "payable",
+          "arguments": []
+        },
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        }
+      ],
+      "name": "resolving",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "_percent",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "name": "set_basepercent",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "_price",
+          "type": 25,
+          "typeArguments": null
+        }
+      ],
+      "name": "set_baseprice",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    },
+    {
+      "inputs": [
+        {
+          "name": "name_str",
+          "type": 10,
+          "typeArguments": null
+        },
+        {
+          "name": "recev",
+          "type": 4,
+          "typeArguments": null
+        }
+      ],
+      "name": "tranfer",
+      "output": {
+        "name": "",
+        "type": 0,
+        "typeArguments": null
+      },
+      "attributes": [
+        {
+          "name": "storage",
+          "arguments": [
+            "read",
+            "write"
+          ]
+        }
+      ]
+    }
+  ],
+  "loggedTypes": [
+    {
+      "logId": "17908035269218563412",
+      "loggedType": {
+        "name": "",
+        "type": 5,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "18060798146092746385",
+      "loggedType": {
+        "name": "",
+        "type": 7,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "2080303076580887568",
+      "loggedType": {
+        "name": "",
+        "type": 2,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "7363501374152615753",
+      "loggedType": {
+        "name": "",
+        "type": 12,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "9656209222076154788",
+      "loggedType": {
+        "name": "",
+        "type": 3,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "16266037451125789909",
+      "loggedType": {
+        "name": "",
+        "type": 15,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "3551850073516221795",
+      "loggedType": {
+        "name": "",
+        "type": 18,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "11788389506312618206",
+      "loggedType": {
+        "name": "",
+        "type": 16,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "5566286078492628248",
+      "loggedType": {
+        "name": "",
+        "type": 19,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "2886499177792137268",
+      "loggedType": {
+        "name": "",
+        "type": 23,
+        "typeArguments": []
+      }
+    },
+    {
+      "logId": "437745219562681537",
+      "loggedType": {
+        "name": "",
+        "type": 20,
+        "typeArguments": []
+      }
+    }
+  ],
+  "messagesTypes": [],
+  "configurables": [
+    {
+      "name": "ADMIN",
+      "configurableType": {
+        "name": "",
+        "type": 4,
+        "typeArguments": []
+      },
+      "offset": 55712
+    }
+  ]
+}
