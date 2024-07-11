@@ -1,0 +1,26 @@
+name: myname
+ecosystem: fuel
+networks:
+- id: 0
+  start_block: 3198731
+  contracts:
+  - name: myname
+    address:
+    - 0xa09c043557bf12021893915c370457464fe6a308975a31156d2860c871726284
+    abi_file_path: abis/myname-abi.json
+    handler: ./src/EventHandlers.js
+    events:
+    - name: NameExtendEvent
+      logId: '3551850073516221795'
+    - name: ResolvingEvent
+      logId: '2886499177792137268'
+    - name: NameTransferEvent
+      logId: '437745219562681537'
+    - name: BuyEvent
+      logId: '7363501374152615753'
+    - name: DelistEvent
+      logId: '16266037451125789909'
+    - name: ListEvent
+      logId: '11788389506312618206'
+    - name: NameRegisteredEvent
+      logId: '5566286078492628248'
