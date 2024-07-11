@@ -1,0 +1,43 @@
+type Myname_NameExtendEvent {
+  id: ID!
+  addtime: BigInt!
+  name: String!
+  identity: ID!
+}
+type Myname_ResolvingEvent {
+  id: ID!
+  name: String!
+  identity: ID!
+}
+type Myname_NameTransferEvent {
+  id: ID!
+  name: String!
+  from: ID!
+  to: ID!
+}
+type Myname_BuyEvent {
+  id: ID!
+  time: String! # Date
+  price: BigInt!
+  name: String!
+  buyer: ID!
+  seller: ID!
+}
+type Myname_DelistEvent {
+  id: ID!
+  name: String!
+  identity: ID!
+}
+type Myname_ListEvent {
+  id: ID!
+  name: String!
+  owner: ID!
+  price: BigInt!
+}
+type Myname_NameRegisteredEvent {
+  id: ID!
+  starttime: String! # Date
+  expiry: String! # Date
+  name: String!
+  identity: ID!
+}
